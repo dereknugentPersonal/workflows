@@ -14,7 +14,6 @@ var jsSources = [
 ];
 var sassSources = ['components/sass/style.scss'];
 
-
 gulp.task('coffee', function() {
 	gulp.src(coffeeSources)
 		.pipe(coffee({ bare: true})
@@ -39,3 +38,5 @@ gulp.task('compass', function() {
 		.on('error', gutil.log)
 		.pipe(gulp.dest('builds/development/css'))
 });
+
+gulp.task('default', ['coffee', 'js', 'compass']);
